@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+    <title>Valentina López Tours</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+        --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+        --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+        --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+        --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+        --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --color-bg: #f7f7f4;
+        --color-surface: #ffffff;
+        --color-surface-2: #f0f8f7;
+        --color-border: rgba(0, 0, 0, 0.08);
+        --color-text: #111111;
+        --color-muted: #4f5b5b;
+        --color-primary: #0c9f9a;
+        --color-primary-dark: #067873;
+        --color-yellow: #ffd21f;
+        --color-yellow-deep: #f0b400;
+        --radius-md: 0.75rem;
+        --radius-lg: 1.25rem;
+        --radius-xl: 1.75rem;
+        --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.12);
+        --font-display: "Montserrat", Arial, sans-serif;
+        --font-body: "Nunito", Arial, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(180deg, #e9f7f6 0%, #f8f7f2 100%);
+        font-family: var(--font-body);
+        color: var(--color-text);
+        padding: var(--space-6);
+        min-height: 100vh;
+      }
+    
+      .hero {
+        position: relative;
+        min-height: 380px;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.15)
+          ),
+          url("piedramejor.png")
+          center center / cover no-repeat;
+        display: flex;
+        align-items: flex-end;
+        padding: var(--space-8);
+      }
+      .hero > * {
+        position: relative;
+        z-index: 2;
+      }
+      .brand-chip {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(8px);
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: var(--color-primary-dark);
+        letter-spacing: 0.03em;
+        font-family: var(--font-display);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        z-index: 10;
+        white-space: nowrap;
+      }
+      
+.flyer {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.flyer::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: url("logo.png") center center no-repeat;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero,
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero,
+.content {
+  position: relative;
+  z-index: 1;
+}
+      /* LOGO SUPERIOR DERECHA (Copiado exactamente de Guatapé) */
+      .top-logo-box {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(4px);
+        border-radius: 28px;
+        padding: 10px 16px 8px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(255, 213, 31, 0.6);
+        z-index: 12;
+        min-width: 10px;
+        max-width: 260px;
+      }
+      .top-logo-box img {
+        width: 250px;
+        height: 150px;
+        object-fit: contain;
+        display: block;
+      }
+      .logo-text {
+        font-family: var(--font-display);
+        font-size: 0.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #08726d;
+        text-align: center;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+      }
+
+      .hero-content {
+        max-width: 520px;
+      }
+      h1 {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 1.6rem + 2vw, 3.5rem);
+        line-height: 1.05;
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      }
+      .subtitle {
+        margin-top: 14px;
+        color: #f8f8f8;
+        font-size: var(--text-lg);
+        font-weight: 700;
+        max-width: 34ch;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+      .content {
+        padding: var(--space-8);
+        display: grid;
+        gap: var(--space-8);
+      }
+      .pickup {
+        background: var(--color-primary);
+        color: #fff;
+        border-radius: 24px;
+        padding: 22px 24px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .pickup h2 {
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        line-height: 1;
+      }
+      .pickup p {
+        font-size: var(--text-lg);
+        font-weight: 700;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+      }
+      .card {
+        background: var(--color-surface-2);
+        border: 1px solid var(--color-border);
+        border-radius: 24px;
+        padding: 24px;
+      }
+      .card h3 {
+        font-family: var(--font-display);
+        font-size: var(--text-lg);
+        margin-bottom: 14px;
+        color: var(--color-primary-dark);
+        text-transform: uppercase;
+      }
+      ul {
+        display: grid;
+        gap: 12px;
+        padding-left: 22px;
+      }
+      li {
+        font-size: var(--text-base);
+        line-height: 1.35;
+      }
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .cta {
+        background: linear-gradient(135deg, var(--color-yellow), #ffe77f);
+        border-radius: 28px;
+        padding: 32px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        text-align: center;
+      }
+      .cta h3 {
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        line-height: 1;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .whatsapp {
+        display: inline-block;
+        background: #14b45c;
+        color: #fff;
+        text-decoration: none;
+        padding: 16px 32px;
+        border-radius: 999px;
+        font-weight: 900;
+        font-size: var(--text-lg);
+        transition: transform 0.2s;
+      }
+      .whatsapp:hover {
+        transform: scale(1.03);
+      }
+      
+      /* RESPONSIVO PARA MÓVILES (Adaptado al comportamiento de Guatapé) */
+      @media (max-width: 760px) {
+        body {
+          padding: 12px;
+        }
+        .hero {
+          min-height: 460px;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 100px 20px 30px 20px;
+        }
+        .brand-chip {
+          top: 16px;
+          left: 16px;
+          font-size: 0.7rem;
+          padding: 5px 12px;
+        }
+        .top-logo-box {
+          top: 12px;
+          right: 12px;
+          padding: 6px 12px;
+          max-width: 120px;
+          min-width: 90px;
+        }
+        .top-logo-box img {
+          max-width: 70px;
+          height: auto;
+        }
+        .logo-text {
+          font-size: 0.65rem;
+        }
+        .hero-content {
+          margin-top: auto;
+        }
+        .cols {
+          grid-template-columns: 1fr;
+        }
+        .content {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          min-height: 420px;
+          padding: 90px 16px 24px 16px;
+        }
+        .top-logo-box {
+          padding: 5px 8px;
+        }
+        .top-logo-box img {
+          max-width: 55px;
+        }
+        .logo-text {
+          font-size: 0.6rem;
+        }
+        .brand-chip {
+          font-size: 0.6rem;
+          padding: 4px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="flyer">
+      <section class="hero">
+        <div class="brand-chip">Tours urbanos en Medellín</div>
+        
+        <!-- LOGO EN LA NUEVA POSICIÓN ESTILO GUATAPÉ -->
+        <div class="top-logo-box">
+          <img src="logo.png"    alt="Logo">
+          <div class="logo-text">Valentina Tours</div>
+        </div>
+       
+        <div class="hero-content">
+          <h1>Valentina López Tours</h1>
+          <p class="subtitle">
+            Experiencia cultural, grafiti tour y recorrido local con identidad paisa.
+          </p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="pickup">
+          <div>
+            <h2>¡Reserva tu experiencia hoy!</h2>
+            <p>Atención rápida por WhatsApp</p>
+          </div>
+          <a
+            class="whatsapp"
+            href="https://wa.me/573176908095"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp 317 690 8095</a
+          >
+        </div>
+
+        <div class="cols">
+          <article class="card">
+            <h3>Incluye</h3>
+            <ul>
+              <li>Recorrido guiado por la Comuna 13.</li>
+              <li>Visita a los principales grafitis y escaleras eléctricas.</li>
+              <li>Acompañamiento durante toda la experiencia.</li>
+              <li>Paradas en miradores y puntos icónicos para fotografías.</li>
+              <li>Historias y contexto cultural de la transformación del sector.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Ideal para</h3>
+            <ul>
+              <li>Turistas que desean conocer la historia de Medellín.</li>
+              <li>Viajeros solos, parejas y grupos pequeños.</li>
+              <li>Amantes del arte urbano y la cultura local.</li>
+              <li>Personas que buscan una experiencia auténtica en la ciudad.</li>
+              <li>Atención personalizada y reservas por WhatsApp.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="contact">
+          <section class="cta">
+            <h3>Reserva hoy</h3>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
