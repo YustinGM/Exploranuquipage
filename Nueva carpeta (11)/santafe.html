@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Santa Fe de Antioquia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rye&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-primary: #0c9f9a;
+        --color-primary-dark: #067873;
+        --color-yellow: #ffd21f;
+        --color-latte: #c89b7b;
+        --font-display: "Montserrat", sans-serif;
+        --font-body: "Nunito", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: var(--font-body);
+        background: #f8f7f2;
+        padding: 20px;
+      }
+
+      .flyer {
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        border-radius: 35px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Hero */
+      .hero {
+        min-height: 350px;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+          url("https://tourcomuna13.com/wp-content/uploads/2020/05/tour-santa-fe-de-antioquia.jpg")
+            center/cover;
+        color: #fff;
+      }
+
+      .hero h1 {
+        font-family: "Rye", cursive;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: #fff8ee;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        text-shadow:
+          0 2px 0 rgba(0, 0, 0, 0.2),
+          0 6px 15px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Banner de encuentro */
+      .meeting-point {
+        background: var(--color-latte);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-weight: 800;
+      }
+      .meeting-point h2 {
+        font-size: 1.5rem;
+      }
+.gallery-end{
+  width:100%;
+  max-width:650px; /* 👈 clave: más compacto y centrado */
+  margin:50px auto;
+  padding:16px;
+
+  background:linear-gradient(145deg,#f6f1e6,#efe2c8);
+  border-radius:28px;
+
+  box-shadow:
+    0 25px 55px rgba(0,0,0,.18),
+    inset 0 0 0 1px rgba(0,0,0,.05);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* imagen grande */
+.gallery-main{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+.gallery-main img{
+  width:100%;
+  height:360px; /* 👈 más proporcionado */
+  object-fit:cover;
+
+  border-radius:20px;
+  border:5px solid #fff;
+
+  box-shadow:0 18px 35px rgba(0,0,0,.22);
+}
+
+/* miniaturas */
+.gallery-grid{
+  margin-top:12px;
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:10px;
+
+  justify-items:center;
+}
+
+/* mini imágenes */
+.gallery-grid img{
+  width:100%;
+  height:110px;
+
+  object-fit:cover;
+
+  border-radius:14px;
+  border:4px solid #fff;
+
+  box-shadow:0 10px 18px rgba(0,0,0,.15);
+
+  transition: transform .25s ease;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.06);
+}
+      /* Contenido */
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 40px;
+      }
+      .column h3 {
+        color: var(--color-primary-dark);
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: bold;  /* 👈 agrega esto */
+}
+
+      @media (max-width: 768px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+      .hero {
+        position: relative;
+      }
+
+      /* TARJETA DE LOGO */
+      .hero__logo {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        width: 220px;
+        height: 140px;
+
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 25px;
+        padding: 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        z-index: 5;
+      }
+
+      /* imagen del logo */
+      .hero__logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="flyer">
+      <section class="hero">
+        <div class="hero__logo">
+          <img src="logo.png" alt="Logo Tour" />
+        </div>
+        <h1>TOUR SANTA FÉ<br />DE ANTIOQUIA</h1>
+      </section>
+
+      <section class="meeting-point">
+        <h2>
+          Punto de encuentro: Medellín<br /><span
+            >Meeting point coordinated after booking</span
+          >
+        </h2>
+      </section>
+
+      <section class="content">
+        <div class="column">
+          <h3>INCLUYE</h3>
+          <ul>
+         
+            <li>Desayuno y almuerzo.</li>
+            <li>Panorámico por el túnel de occidente.</li>
+            <li>Visita al puente colgante de occidente.</li>
+            <li>Recorrido histórico en Santa Fe de Antioquia.</li>
+            <li>Visita al museo Juan del Corral.</li>
+            <li>Visita a talleres de filigrana.</li>
+            <li>Tarjeta de asistencia médica.</li>
+          </ul>
+        </div>
+        <div class="column">
+          <h3>IT INCLUDES</h3>
+          <ul>
+            
+            <li>Breakfast and Lunch.</li>
+            <li>Panoramic view of the Western Tunnel.</li>
+            <li>Visit to the Hanging Bridge of the West.</li>
+            <li>Historical tour in Santa Fe de Antioquia.</li>
+            <li>Visit to the Juan del Corral museum.</li>
+            <li>Visit to filigree workshops.</li>
+            <li>Medical assistance card.</li>
+          </ul>
+        </div>
+         
+      </section>
+      </section>  <!-- cierra .content -->
+
+      <section class="gallery-end">
+        <div class="gallery-main">
+          <img src="Santa-Fe-De-Antioquia-medellin.jpg"Principal">
+        </div>
+        <div class="gallery-grid">
+          <img src="1.jpg" alt="">
+          <img src="2.webp" alt="">
+          <img src="3.jpg" alt="">
+        </div>
+      </section>
+
+    </main>
+    </main>
+    
+  </body>
+</html>

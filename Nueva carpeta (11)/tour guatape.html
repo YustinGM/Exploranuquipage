@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover"
+    />
+    <title>Tour Guatapé - Valentina Tours Comuna 13</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        background: linear-gradient(145deg, #eef8f7 0%, #f8f7f2 100%);
+        padding: 16px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Tarjeta principal */
+     .sheet {
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+  position: relative;
+  isolation: isolate;
+}
+.sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("logo.png");
+  background-repeat: no-repeat;
+
+  /* Tamaño del logo */
+  background-size: 55%;
+
+  /* Posición */
+  background-position: center 68%;
+
+  opacity: 0.2;
+
+  pointer-events: none;
+  z-index: 1;
+}.hero,
+.strip,
+.content {
+  position: relative;
+  z-index: 2;
+}
+      /* HERO CON IMAGEN DE FONDO (Guatapé) */
+      .hero {
+        position: relative;
+        min-height: 380px;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.35)),
+          url("https://media.traveler.es/photos/6137776b8f298b3a7a5bd81d/master/w_1600,c_limit/106156.jpg")
+            center center / cover no-repeat;
+        display: flex;
+        align-items: flex-end;
+        padding: 28px 28px 32px 28px;
+      }
+
+      .hero > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* BADGE IZQUIERDO (Tours urbanos Medellín) */
+      .brand-chip {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(8px);
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #067873;
+        letter-spacing: 0.03em;
+        font-family: "Montserrat", sans-serif;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        z-index: 10;
+        white-space: nowrap;
+      }
+
+      /* LOGO SUPERIOR DERECHA (estructura solicitada) */
+      .top-logo-box {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(4px);
+        border-radius: 28px;
+        padding: 10px 16px 8px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(255, 213, 31, 0.6);
+        z-index: 12;
+        min-width: 10px;
+        max-width: 260px;
+      }
+
+      .top-logo-box img {
+        width: 250px;
+        height: 150px;
+        object-fit: contain;
+        display: block;
+      }
+      .logo-text {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #08726d;
+        text-align: center;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+      }
+
+      /* Contenido textual héroe */
+      .hero-content {
+        max-width: 520px;
+      }
+
+      h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: clamp(2rem, 1.6rem + 2vw, 3.5rem);
+        line-height: 1.05;
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        margin-bottom: 8px;
+      }
+
+      /* Badge precio redondo */
+      .badge {
+        position: absolute;
+        bottom: 24px;
+        right: 28px;
+        width: 170px;
+        height: 170px;
+        background: #ffd51f;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 900;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        z-index: 5;
+      }
+
+      .badge span {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        font-weight: 800;
+        padding: 0 8px;
+      }
+
+      .badge strong {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        margin-top: 6px;
+      }
+
+      /* Franja de recogida (teal) */
+      .strip {
+        background: #0c9f9a;
+        padding: 18px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        color: white;
+      }
+
+      .strip .big {
+        font-size: 1.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      .strip .small {
+        font-size: 1rem;
+        font-style: italic;
+        opacity: 0.9;
+      }
+
+      .whatsapp-badge {
+        font-weight: 900;
+        background: #00000022;
+        padding: 8px 18px;
+        border-radius: 60px;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Contenido principal: columnas */
+      .content {
+        padding: 45px 28px 32px 28px;
+      }
+
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        position: relative;
+      }
+
+      .cols::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        bottom: 10px;
+        width: 1px;
+        background: #e2e8e8;
+        transform: translateX(-50%);
+      }
+
+     h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #0c9f9a;
+  text-transform: uppercase;
+}
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+     li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+      li::before {
+        content: "▹";
+        position: absolute;
+        left: 4px;
+        color: #ffb81c;
+        font-weight: bold;
+      }
+
+      .note {
+        margin-top: 20px;
+        font-size: 0.8rem;
+        color: #6a7a7a;
+        font-style: italic;
+        background: #f8f9f5;
+        padding: 8px 12px;
+        border-radius: 18px;
+      }
+
+      /* SECCIÓN INFERIOR CON FORMA DE TRIÁNGULO (clip-path) */
+      .footer-triangle {
+        margin-top: 32px;
+        width: 100%;
+        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        background: #0b5e5a;
+        min-height: 190px;
+        position: relative;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><defs><pattern id="diagTri" patternUnits="userSpaceOnUse" width="50" height="50" patternTransform="rotate(45)"><rect width="50" height="50" fill="%230c9f9a"/><line x1="0" y1="0" x2="0" y2="50" stroke="%23ffd51f" stroke-width="12" stroke-opacity="0.8"/><line x1="25" y1="0" x2="25" y2="50" stroke="%23ffffff" stroke-width="5" stroke-opacity="0.4"/></pattern><linearGradient id="gradTri" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%2308726d" stop-opacity="0.8"/><stop offset="100%" stop-color="%23ffb81c" stop-opacity="0.7"/></linearGradient></defs><rect width="400" height="200" fill="url(%23diagTri)"/><rect width="400" height="200" fill="url(%23gradTri)"/></svg>');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer-triangle::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 213, 31, 0.15) 0%,
+          rgba(0, 0, 0, 0.2) 100%
+        );
+        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        pointer-events: none;
+      }
+
+      .triangle-content {
+        position: absolute;
+        bottom: 15%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+        z-index: 3;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(4px);
+        display: inline-block;
+        width: fit-content;
+        margin: 0 auto;
+        border-radius: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 20px;
+        white-space: nowrap;
+        letter-spacing: 0.5px;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 760px) {
+        body {
+          padding: 12px;
+        }
+        .hero {
+          min-height: 460px;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 100px 20px 30px 20px;
+        }
+        .brand-chip {
+          top: 16px;
+          left: 16px;
+          font-size: 0.7rem;
+          padding: 5px 12px;
+          white-space: nowrap;
+        }
+        .top-logo-box {
+          top: 12px;
+          right: 12px;
+          padding: 6px 12px;
+          max-width: 120px;
+          min-width: 90px;
+        }
+        .top-logo-box img {
+          max-width: 70px;
+        }
+        .logo-text {
+          font-size: 0.65rem;
+        }
+        .badge {
+          position: relative;
+          bottom: auto;
+          right: auto;
+          margin-top: 20px;
+          margin-left: auto;
+          margin-right: 0;
+          width: 130px;
+          height: 130px;
+        }
+        .badge strong {
+          font-size: 1.7rem;
+        }
+        .badge span {
+          font-size: 0.7rem;
+        }
+        .hero-content {
+          margin-top: 10px;
+        }
+        .strip {
+          padding: 16px 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .strip .big {
+          font-size: 1.3rem;
+        }
+        .strip .small {
+          font-size: 0.9rem;
+        }
+        .whatsapp-badge {
+          font-size: 0.85rem;
+          align-self: flex-start;
+        }
+        .content {
+          padding: 30px 20px 24px;
+        }
+        .cols {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .cols::before {
+          display: none;
+        }
+        h3 {
+          font-size: 1.1rem;
+        }
+        li {
+          font-size: 0.9rem;
+        }
+        .footer-triangle {
+          min-height: 140px;
+          margin-top: 28px;
+        }
+        .triangle-content {
+          font-size: 0.8rem;
+          white-space: normal;
+          width: 85%;
+          bottom: 12%;
+          padding: 6px 14px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          min-height: 420px;
+          padding: 90px 16px 24px 16px;
+        }
+        .badge {
+          width: 110px;
+          height: 110px;
+        }
+        .badge strong {
+          font-size: 1.4rem;
+        }
+        .badge span {
+          font-size: 0.6rem;
+        }
+        .top-logo-box {
+          padding: 5px 8px;
+        }
+        .top-logo-box img {
+          max-width: 55px;
+        }
+        .logo-text {
+          font-size: 0.6rem;
+        }
+        .brand-chip {
+          font-size: 0.6rem;
+          padding: 4px 10px;
+        }
+        .strip .big {
+          font-size: 1.1rem;
+        }
+        .whatsapp-badge {
+          font-size: 0.75rem;
+          padding: 5px 12px;
+        }
+        .triangle-content {
+          font-size: 0.7rem;
+          padding: 5px 10px;
+          width: 90%;
+        }
+      }
+
+      /* Ajuste para pantallas muy grandes (mejor espaciado) */
+      @media (min-width: 1400px) {
+        .sheet {
+          max-width: 1000px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sheet">
+      <!-- HERO con organización de logo -->
+      <section class="hero">
+        <!-- Badge izquierdo -->
+        <div class="brand-chip">🏆 Tours urbanos Medellín</div>
+
+        <!-- LOGO esquina superior derecha (estructura solicitada) -->
+        <div class="top-logo-box">
+          <!-- Logo imagen (puedes reemplazar con tu archivo logo.png) -->
+          <img src="logo.png" alt="">
+          <div class="logo-text">Valentina Tours</div>
+        </div>
+
+       
+
+        <!-- Contenido textual izquierdo -->
+        <div class="hero-content">
+          <h1>Tour Guatapé</h1>
+        </div>
+      </section>
+
+      <!-- Franja de recogida / punto de encuentro -->
+      <section class="strip">
+        <div>
+          <div class="big">📍 Punto de encuentro en Medellín</div>
+          <div class="small">Meeting point in Medellín</div>
+        </div>
+        <div class="whatsapp-badge">📱 WhatsApp 317 690 8095</div>
+      </section>
+
+      <!-- Contenido principal: listas bilingües -->
+      <section class="content">
+        <div class="cols">
+          <article>
+            <h3>Incluye</h3>
+            <ul>
+              <li>Desayuno.</li>
+              <li>Almuerzo.</li>
+              <li>Visita al municipio de Marinilla panorámico.</li>
+              <li><strong>¡Nuevo!</strong> visita a la casa al revés.</li>
+              <li>El ave fénix.</li>
+              <li>Templo Roca.</li>
+              <li>Visita a la réplica del antiguo Peñol.</li>
+              <li>Recorrido panorámico por el Municipio del Nuevo Peñol.</li>
+              <li>Recorrido en barco por la represa de Guatapé.</li>
+              <li>Visita a la piedra del Peñol (no incluye el ascenso).</li>
+              <li>Visita al municipio de Guatapé.</li>
+              <li>Plaza de los zócalos.</li>
+              <li>Calle de los recuerdos.</li>
+              <li>Parque principal e iglesia.</li>
+              <li>Malecón.</li>
+              <li>Visita al alto del chocho (granja de las llamas).</li>
+              <li>Tarjeta de asistencia médica.</li>
+              <li>Guía acompañante durante todo el recorrido.</li>
+              <li>Salida todos los días.</li>
+            </ul>
+            <div class="note">
+              *No cubre actividades extremas, solo las nombradas en cada
+              paquete.
+            </div>
+          </article>
+          <article>
+            <h3>It includes</h3>
+            <ul>
+              <li>Breakfast.</li>
+              <li>Lunch.</li>
+              <li>Visit to the panoramic municipality of Marinilla.</li>
+              <li>Visit to the Upside-Down House.</li>
+              <li>The Phoenix.</li>
+              <li>Rock Temple.</li>
+              <li>Visit to the replica of the old Peñol.</li>
+              <li>Panoramic tour through Nuevo Peñol.</li>
+              <li>Boat tour on Guatapé Dam.</li>
+              <li>Visit to Piedra del Peñol (ascent not included).</li>
+              <li>Visit to Guatapé town.</li>
+              <li>Square of the zócalos.</li>
+              <li>Street of Memories.</li>
+              <li>Main park and church.</li>
+              <li>Pier.</li>
+              <li>Visit to Alto del Chocho (llama farm).</li>
+              <li>Medical assistance card.</li>
+              <li>Tour guide throughout the journey.</li>
+              <li>Daily departures.</li>
+            </ul>
+            <div class="note">
+              *Coverage does not extend to extreme activities; only those
+              specified.
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
